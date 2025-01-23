@@ -13,7 +13,7 @@ const ProductList = () => {
     console.log("Line 13: ", id)
 
     useEffect(() => {
-      axios.get(`${url}product/getall`).then((response) => {
+      axios.get(`http://137.184.123.204:8081/eshop/product/getall`).then((response) => {
         setProducts(response.data);
       });
     }, []);
