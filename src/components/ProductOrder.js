@@ -24,7 +24,7 @@ const ProductOrder = () => {
         axios.get(`${url}product/get/` + productId).then((response) => {
           setNewProduct(response.data);
         });
-      }, [url]); 
+      }, [url, productId]); 
 
     useEffect(() => {
       axios.get(`${url}order/get/` + id).then((response) => {
