@@ -1,0 +1,15 @@
+@media (max-width: 768px) {
+    .shopping-cart-container {
+      flex-direction: column;
+    }
+  
+    .payment-method {
+      order: 2;
+      margin-top: 20px;
+    }
+  
+    .product-list {
+      order: 1;
+    }
+  }
+  
