@@ -1,7 +1,7 @@
 
 import axios from "axios";
 import { useState, useEffect } from "react";
-import {useNavigate, useParams} from "react-router-dom";
+import {useParams} from "react-router-dom";
 
 
 const OrderView = () => {

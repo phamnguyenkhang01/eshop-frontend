@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import axios from "axios";
-import {useNavigate, useParams} from "react-router-dom";
+import {useParams} from "react-router-dom";
 
 import Select from "./Select";
 
@@ -30,7 +30,7 @@ const ProductOrder = () => {
       axios.get(`${url}order/get/` + id).then((response) => {
         setOrder(response.data);
       });
-    }, [id, url]);
+    }, [id, url, productId]);
 
     useEffect(() => {
       const fetchProductQuantities = async () => {
@@ -52,7 +52,7 @@ const ProductOrder = () => {
         }
       };
       fetchProductQuantities();
-    }, [order]);
+    }, [order, url]);
     
     console.log("Line 33: ", order)
 

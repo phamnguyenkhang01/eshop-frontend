@@ -10,7 +10,7 @@ function OrderButton ({quantity, handleDelete, id, handleUpdate, isAddButtonDisa
         handleDelete(id);
       }
 
-  }, [count]);
+  }, [count, handleDelete, handleUpdate, id]);
 
   const renderTooltip = () => (
     <Tooltip id="button-tooltip">
