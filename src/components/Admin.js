@@ -9,7 +9,7 @@ const Admin = () => {
     axios.get(`${url}product/getall`).then((response) => {
       setProducts(response.data);
     });
-  }, []);  
+  }, [url]);  
 
   const pList = products.map((product) => (
     <li 

@@ -7,6 +7,7 @@ const Home = ({user}) => {
               <img 
                 className="oval"
                 src="./images/Homepage.png"
+                alt="Homepage preview"
               />
             </ul>
           </div>

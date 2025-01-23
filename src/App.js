@@ -31,8 +31,9 @@ const user = {
 
 export default function App() {
   const [cart, setCart] = useState(JSON.parse(localStorage.getItem('cart')) || []);  
-  const [order, setOrder] = useState(JSON.parse(localStorage.getItem('order')) || []);
   const count = cart.reduce((total,product) => total + parseInt(product.quantity), 0);
+
+  const  order = JSON.parse(localStorage.getItem('order')) || []
 
   useEffect(() => {
     localStorage.setItem('cart', JSON.stringify(cart))},[cart]
