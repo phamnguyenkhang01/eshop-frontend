@@ -49,7 +49,7 @@ const ShoppingCart = ({ cart, setCart, count }) => {
     axios.get(`${url}product/get/0`).then((response) => {
       setComputerBase(response.data);
     });
-  }, []);
+  }, [url]);
 
   let navigate = useNavigate();
 
@@ -114,7 +114,7 @@ const ShoppingCart = ({ cart, setCart, count }) => {
       }
     };
     fetchProductQuantities();
-  }, []);
+  }, [cart, url]);
 
   const pList = cart.map((product, index) => {
     return (

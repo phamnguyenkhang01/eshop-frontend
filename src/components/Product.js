@@ -15,7 +15,7 @@ const Product = ({handleClick}) => {
         axios.get(`${url}product/get/` + id).then((response) => {
           setProduct(response.data);
         });
-      }, []); 
+      }, [id, url]); 
 
       console.log("Line 15: ", product)
       

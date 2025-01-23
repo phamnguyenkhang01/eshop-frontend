@@ -24,13 +24,13 @@ const ProductOrder = () => {
         axios.get(`${url}product/get/` + productId).then((response) => {
           setNewProduct(response.data);
         });
-      }, []); 
+      }, [url]); 
 
     useEffect(() => {
       axios.get(`${url}order/get/` + id).then((response) => {
         setOrder(response.data);
       });
-    }, [id]);
+    }, [id, url]);
 
     useEffect(() => {
       const fetchProductQuantities = async () => {
@@ -57,11 +57,6 @@ const ProductOrder = () => {
     console.log("Line 33: ", order)
 
       newProduct.quantity = quantity;
-      console.log("Line 34: ", newProduct)
-
-
-      let navigate = useNavigate();
-      console.log("Line 85: ", productQuantities)
 
     const addProduct = async () => {
       setOrder((prevOrder) => {
@@ -74,7 +69,6 @@ const ProductOrder = () => {
         console.log("Line 74: ", productIndex)
 
         let updatedProducts = [];
-        let updatedDescription = "";
 
         // if (productIndex !== -1){
         //   updatedProducts = prevOrder.products.map((product, index) => 
@@ -144,7 +138,9 @@ const ProductOrder = () => {
                 <h6 class="card-title">Quantity: {newProduct.quantity}</h6>                              
                 <p class="card-text">{newProduct.description}</p>
                 <p class="card-text"><Select desc={"Quantity"} n={10} setQuantity={setQuantity}/></p>              
-                <a class="btn btn-warning" role="button" onClick={()=> addProduct()}><i class="bi bi-plus=square"></i>Add to Order</a>
+                <button className="btn btn-warning" onClick={() => addProduct()}>
+                  <i className="bi bi-plus-square"></i>Add to Order
+                </button>
             </div>
         </div>
     );

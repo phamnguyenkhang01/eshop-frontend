@@ -14,7 +14,7 @@ const ProductUpdate = () => {
         axios.get(`${url}product/get/` + id).then((response) => {
             setProduct(response.data);
         });
-    }, []);
+    }, [id, url]);
 
     const navigate = useNavigate();    
 

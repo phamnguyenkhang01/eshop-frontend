@@ -2,7 +2,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import {useNavigate, useParams} from "react-router-dom";
-import Orders from "./Orders";
 
 
 const OrderView = () => {
@@ -19,8 +18,7 @@ const OrderView = () => {
       
         setOrder(response.data);
       });
-    }, []);
-    let navigate = useNavigate();
+    }, [url, id]);
     const count = order.products?.reduce((total,product) => total + parseInt(product.quantity), 0);
 /*
      const pList = cart.map(product =>

@@ -13,7 +13,7 @@ const Orders = () => {
       setAllorders(response.data);
       setOrders(response.data);
     });
-  }, []);
+  }, [url]);
 
   // Function to sort orders by column
   const sortOrders = (column) => {
