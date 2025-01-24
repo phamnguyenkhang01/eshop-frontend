@@ -14,7 +14,7 @@ const ProductList = () => {
     console.log("Line 14: ", url)
 
     useEffect(() => {
-      axios.get(`/api/product/getall`)
+      axios.get(`${url}product/getall`)
         .then((response) => {
           console.log("Request succeeded: ", response); // log response on success
           setProducts(response.data);
@@ -22,7 +22,7 @@ const ProductList = () => {
         .catch((error) => {
           console.error("Request failed: ", error); // log error if request fails
         });
-    }, []);
+    }, [url]);
 
     const pList = products.map(product =>
       <li className="list-group-item d-flex justify-content-between align-items-center"
