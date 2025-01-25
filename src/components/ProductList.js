@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import https from 'https';
 import { useParams } from "react-router-dom";
 
 const ProductList = () => {
@@ -10,16 +9,12 @@ const ProductList = () => {
 
     let {id} = useParams();
 
-    const agent = new https.Agent({
-      rejectUnauthorized: false,
-    });
-
     console.log("Line 13: ", id);
 
     console.log("Line 14: ", url)
 
     useEffect(() => {
-      axios.get(`${url}product/getall`, {httpsAgent: agent})
+      axios.get(`${url}product/getall`)
         .then((response) => {
           console.log("Request succeeded: ", response); // log response on success
           setProducts(response.data);
