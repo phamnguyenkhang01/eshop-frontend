@@ -14,7 +14,9 @@ const ProductList = () => {
     console.log("Line 14: ", url)
 
     useEffect(() => {
-      axios.get(`${url}product/getall`)
+      axios.get(`${url}product/getall`, {
+        referrerPolicy: 'unsafe-url',
+      })
         .then((response) => {
           console.log("Request succeeded: ", response); // log response on success
           setProducts(response.data);
