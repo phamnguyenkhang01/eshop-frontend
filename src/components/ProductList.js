@@ -19,7 +19,7 @@ const ProductList = () => {
     console.log("Line 14: ", url)
 
     useEffect(() => {
-      axios.get(`${url}product/getall`, {httpAgent: agent})
+      axios.get(`${url}product/getall`, {httpsAgent: agent})
         .then((response) => {
           console.log("Request succeeded: ", response); // log response on success
           setProducts(response.data);
